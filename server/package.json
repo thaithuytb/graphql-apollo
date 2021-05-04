@@ -1,0 +1,21 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "server-graphql-express",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "thai ngo",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server-express": "^2.24.0",
+    "graphql": "^15.5.0",
+    "mongoose": "^5.12.7"
+  },
+  "devDependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7"
+  }
+}
