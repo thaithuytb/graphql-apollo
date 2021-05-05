@@ -1,21 +1,20 @@
-const { books, authors } = require('../data/static');
 const resolvers = {
     Query: {
-        books: () => books,
-        book: (parent, args) => books.find((book) => book.id == args.id),
-        authors: () => authors,
+        books: (parent, args , context) => context.getAllBooks(),
+        book: (parent, args, { getBook } ) => getBook(args.id),
+        authors: (parent, args , { getAllAuthors }) => getAllAuthors(),
+        author: (parent, args, { getAuthor } ) => getAuthor(args.id),
     },
     Mutation: {
-        book: (parent, args) => args,
-        author: (parent, args) => args,
+        createBook: async (parent, args, { createBook }) => await createBook(args),
+        createAuthor: async (parent, args, { createAuthor }) => await createAuthor(args),
     },
     Book: {
-        author: (parent, args) => authors.find((author) => author.id == parent.authorID), 
+        author: async (parent, args, context) => await context.getAuthorOfBook(parent.authorID)  
     },
     Author: {
-        books: (parent, args) => books.filter((book) => book.authorID == parent.id),     
+        books: async (parent, args, { getBooksOfAuthor }) => await getBooksOfAuthor(parent.id),
     },
-
 }
 
 module.exports = resolvers;
