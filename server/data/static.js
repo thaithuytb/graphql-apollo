@@ -18,10 +18,16 @@ const books = [
         authorID: 1,
     },
     {
-        id: 3,
+        id: 4,
         name: 'Nói với con',
         genre: 'Education',
         authorID: 3,
+    },
+    {
+        id: 5,
+        name: 'Sang Thu',
+        genre: 'Education',
+        authorID: 4,
     },
 ];
 
