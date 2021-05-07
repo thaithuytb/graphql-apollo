@@ -1,0 +1,28 @@
+.row-show-data {
+    text-align: start;
+}
+.show-books {
+    background-color: rgb(65, 64, 62);
+    border-radius: 0 !important;
+}
+.books-list {
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.books-list li {
+    cursor: pointer;
+    width: 100%;
+    min-height: 50px;
+    line-height: 50px;
+    border: 1px solid rgb(71, 67, 67);
+}
+.books-list li:hover {
+    background-color: rgb(65, 60, 60);
+}
+.select-book {
+    color: white;
+    height: 100%;
+    text-align: center;
+}
