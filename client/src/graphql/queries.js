@@ -9,6 +9,15 @@ const getAllBooks = gql`
   }
 `;
 
+const getAllAuthors = gql`
+  query getAllAuthors {
+    authors {
+      id
+      name
+    }
+  }
+`;
+
 const getDetailBook = gql`
   query getDetailBook($id: ID!) {
     book (id: $id) {
@@ -28,4 +37,4 @@ const getDetailBook = gql`
   }
 `;
 
-export { getAllBooks, getDetailBook };
+export { getAllBooks, getDetailBook, getAllAuthors };
